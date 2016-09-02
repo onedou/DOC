@@ -100,8 +100,53 @@ db和getName方法是一样的效果，都可以查询当前使用的数据库
 
 >1、添加一个用户
 
-	db.addUser("name");
-	db.addUser("userName", "pwd123", true); 
+	db.createUser(user, writeConcern);
+	
+	#Example 
+	db.createUser({
+				   user: "accountAdmin01",
+				   pwd: "changeMe",
+				   customData: { employeeId: 12345 },
+				   roles: [{ role: "clusterAdmin", db: "admin" },
+				           { role: "readAnyDatabase", db: "admin" },
+				           "readWrite"]
+				   },
+				   {w: "majority" , wtimeout: 5000}
+	)
+
+Create User with Roles
+
+	db.createUser(
+	   {
+	     user: "accountUser",
+	     pwd: "password",
+	     roles: [ "readWrite", "dbAdmin" ]
+	   }
+	)
+
+Create User Without Roles
+	
+	db.createUser(
+	   {
+	     user: "reportsUser",
+	     pwd: "password",
+	     roles: [ ]
+	   }
+	)
+
+Create Administrative User with Roles
+	
+	db.createUser(
+	   {
+	     user: "appAdmin",
+	     pwd: "password",
+	     roles:
+	       [
+	         { role: "readWrite", db: "config" },
+	         "clusterAdmin"
+	       ]
+	   }
+	)
 
 添加用户、设置密码、是否只读
 
