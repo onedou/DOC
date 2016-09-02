@@ -157,10 +157,12 @@ Create Administrative User with Roles
 >3、显示当前所有用户
 
 	db.getUsers();
+	show users;
+	db.system.users.find();
 
 >4、删除用户
 
-	db.removeUser("userName");
+	db.dropUser("userName");
 
 ##其他
 >1、查询之前的错误信息
