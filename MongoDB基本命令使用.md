@@ -156,7 +156,7 @@ Create Administrative User with Roles
 
 >3、显示当前所有用户
 
-	show users;
+	db.getUsers();
 
 >4、删除用户
 
