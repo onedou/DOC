@@ -16,7 +16,7 @@ These are the pseudo elements themselves. The actual parts of the scrollbars.
 	::-webkit-scrollbar-corner       { /* 6 */ }
 	::-webkit-resizer                { /* 7 */ }
 
-scrollbarparts
+![](https://github.com/onedou/DOC/blob/master/Images/201609020948.png)
 
 #The Different States
 
@@ -108,4 +108,4 @@ The particularly nice bit here is that the scrollbar is on the body element, yet
 
 On Forrst, they use custom scollbars on code snippets which are also pretty nice. They are less visually intense and so don't fight as much with the code highlighting.
 
-webkitvsnot
+![](https://github.com/onedou/DOC/blob/master/Images/201609020945.png)
