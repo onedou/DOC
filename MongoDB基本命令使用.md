@@ -164,6 +164,10 @@ Create Administrative User with Roles
 
 	db.dropUser("userName");
 
+>5.更新用户
+
+	db.updateUser();
+
 ##其他
 >1、查询之前的错误信息
 
