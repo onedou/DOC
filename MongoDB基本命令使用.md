@@ -168,20 +168,14 @@ Create Administrative User with Roles
 
 	db.updateUser();
 
-	{
-	   "_id" : "products.appClient01",
-	   "user" : "appClient01",
-	   "db" : "products",
-	   "customData" : { "empID" : "12345", "badge" : "9156" },
-	   "roles" : [
-	       { "role" : "readWrite",
-	         "db" : "products"
-	       },
-	       { "role" : "read",
-	         "db" : "inventory"
-	       }
-	   ]
-	}
+	db.updateUser( "appClient01",
+	   {
+	     customData : { employeeId : "0x3039" },
+	     roles : [
+	               { role : "read", db : "assets"  }
+	             ]
+	   }
+	)
 
 ##其他
 >1、查询之前的错误信息
