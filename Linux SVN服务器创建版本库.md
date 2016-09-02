@@ -1,4 +1,4 @@
-# Linux SVN服务器创建版本库 #
+# Linux SVN服务器配置及使用方法 #
 
 ## 1、安装svn服务 ##
 
@@ -48,3 +48,32 @@
 	svnserve -d -r /home/svn
 
 开启多个版本库的时候要启动不同的端口 svnserve -d --listen-port 3688 -r /static/
+
+##使用命令##
+
+	svnserve
+	
+	usage: svnserve [-d | -i | -t | -X] [options]
+	
+	Valid options:
+	  -d [--daemon]            : daemon mode
+	  -i [--inetd]             : inetd mode
+	  -t [--tunnel]            : tunnel mode
+	  -X [--listen-once]       : listen-once mode (useful for debugging)
+	  -r [--root] ARG          : root of directory to serve
+	  -R [--read-only]         : force read only, overriding repository config file
+	  --config-file ARG        : read configuration from file ARG
+	  --listen-port ARG        : listen port
+	                             [mode: daemon, listen-once]
+	  --listen-host ARG        : listen hostname or IP address
+	                             [mode: daemon, listen-once]
+	  -T [--threads]           : use threads instead of fork [mode: daemon]
+	  --foreground             : run in foreground (useful for debugging)
+	                             [mode: daemon]
+	  --log-file ARG           : svnserve log file
+	  --pid-file ARG           : write server process ID to file ARG
+	                             [mode: daemon, listen-once]
+	  --tunnel-user ARG        : tunnel username (default is current uid's name)
+	                             [mode: tunnel]
+	  -h [--help]              : display this help
+	  --version                : show program version information
