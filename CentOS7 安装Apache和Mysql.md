@@ -1,9 +1,11 @@
-# CentOS7 安装Apache和Mysql  #
+# CentOS7 安装Apache和Mysql 
 
-Apache在CentOS中的名称为httpd
------
+## Apache在CentOS中的名称为httpd
 	sudo yum intsall httpd
 
-CentoOS7 只能通过mariadb安装mysqlDB
------
+## CentoOS7 只能通过mariadb安装mysqlDB
 	sudo yum install mariadb
+
+## 启动mariadb服务
+	service mariadb start
+
