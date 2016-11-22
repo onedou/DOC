@@ -1,4 +1,4 @@
-#手动编译PHP7的MongoDB扩展
+# 手动编译PHP7的MongoDB扩展
 
 >下载支持php7的MongoDB扩展
 
