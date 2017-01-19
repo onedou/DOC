@@ -71,3 +71,26 @@
 		FLUSH PRIVILEGES;
 
 这时重复第三步应该就没有问题了。远程使用 navicat 连接也正常了。
+
+## 忘记Mysql密码
+
+如果忘记了MySQL root密码，可以用以下方法重新设置：
+
+1. KILL掉系统里的MySQL进程
+
+    lsof -i -P | grep LISTEN
+    #查看mysql的进程号 并kill 进程号
+
+2. 用以下命令启动MySQL，以不检查权限的方式启动
+
+    mysql_safe --skip-grant-tables &
+
+3. 然后用空密码方式使用root用户登录 MySQL
+
+    mysql -u root
+
+4. 修改root用户的密码
+	MySQL> use mysql;
+    MySQL> update user set password=PASSWORD('新密码') where User='root';  
+    MySQL> flush privileges;  
+    MySQL> quit;
