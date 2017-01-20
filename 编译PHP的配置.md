@@ -83,6 +83,11 @@
 		
 		http://www.ilanni.com/?p=7609
 
+>配置完成后 空白页面
+
+		fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+		fastcgi_param  PATH_INFO          $fastcgi_script_name;
+
 ## 编译成功后的信息
 
 		Installing shared extensions:     /etc/php5/lib/php/extensions/no-debug-non-zts-20131226/
