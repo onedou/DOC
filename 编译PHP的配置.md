@@ -38,4 +38,19 @@
 		--with-zlib \
 		--enable-zip \
 		--with-bz2 \
-		--with-readline
+		--with-readline \
+		--disable-fileinfo
+
+## 开始编译
+
+		make //多核时可以启用 -j8
+		make install
+
+## 出现问题时用到的命令
+		sudo apt-get install libxml2-dev
+		sudo apt-get install libbz2-dev
+		sudo apt-get install libmcrypt-dev
+		sudo apt-get install libreadline-dev
+		sudo apt-get install libcurl4-openssl-dev pkg-config
+
+--disable-fileinfo 服务器内存只有1G时可以启用
