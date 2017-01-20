@@ -79,6 +79,10 @@
 		
 		ln -s /etc/php5/bin/php /usr/sbin/php
 
+> 配置 nginx
+		
+		http://www.ilanni.com/?p=7609
+
 ## 编译成功后的信息
 
 		Installing shared extensions:     /etc/php5/lib/php/extensions/no-debug-non-zts-20131226/
