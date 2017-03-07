@@ -1,0 +1,9 @@
+由于nginx与PHP-fpm之间的一个小bug，会导致这样的现象： 网站中的静态页面 *.html 都能正常访问，而 *.php 文件虽然会返回200状态码， 但实际输出给浏览器的页面内容却是空白。 简而言之，原因是nginx无法正确的将 *.php 文件的地址传递给php-fpm去解析， 相当于php-fpm接受到了请求，但这请求却指向一个不存在的文件，于是返回空结果。 为了解决这个问题，需要改动nginx默认的fastcgiparams配置文件： vi /etc/nginx/fastcgi_params 在文件的最后增加两行： 
+[plain] view plain copy 在CODE上查看代码片派生到我的代码片
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;  
+fastcgi_param PATH_INFO                $fastcgi_script_name;  
+
+
+然后重启一下服务：
+[plain] view plain copy 在CODE上查看代码片派生到我的代码片
+service php5-fpm reload service nginx reload            //重新加载各项配置改动。  
