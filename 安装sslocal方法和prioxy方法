@@ -30,3 +30,11 @@ sudo  vi /etc/rc.local在exit 0前添加(这里假设你已经在第2步写好sh
 sudo sh /path/to/sslocal/ss_start.sh如果路径和权限都没问题，在下次开机时就会启动ss了。
 查看ss是否已经开启，用下面这个:
 ps -ef | grep sslocal
+
+----------------------------------------------------------------------
+sudo apt-get install privoxy
+Privoxy的配置文件在/etc/privoxy/config
+
+找到4.1. listen-address这一节，确认监听的端口号。
+找到5.2. forward-socks4, forward-socks4a, forward-socks5 and forward-socks5t这一节，加上如下配置，注意最后的点号。
+sudo /etc/init.d/privoxy restart
