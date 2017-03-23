@@ -3,6 +3,8 @@
 ##系统环境变量路径
 
 	/usr/bin
+	
+	MAC:/usr/local/bin
 
 ##删除软连接
 
