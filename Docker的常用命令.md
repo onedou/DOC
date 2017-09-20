@@ -58,6 +58,10 @@ Docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 
 >Note：在执行apt-get 命令的时候，要带上-y参数。如果不指定-y参数的话，apt-get命令会进入交互模式，需要用户输入命令来进行确认，但在docker环境中是无法响应这种交互的。apt-get 命令执行完毕之后，容器就会停止，但对容器的改动不会丢失。
 
+端口映射及后台运行
+
+	docker run -d --name gitlab -p 80:80 gitlab/gitlab-ce
+
 ## 查看容器（ps）
 
 列出当前所有正在运行的container  
