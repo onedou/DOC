@@ -1,12 +1,18 @@
-1. Install kernel headers and build tools
+## install xorg
+> sudo apt-get install xorg openbox
+
+## 1. Install kernel headers and build tools
+
 Virtualbox guest additions are compiled for the target system, so it needs the necessary kernel headers and related programs. Install the following 2 packages.
 
-$ sudo apt-get install build-essential module-assistant
+> $ sudo apt-get install build-essential module-assistant
+
 Now run
 
-$ sudo m-a prepare
+> $ sudo m-a prepare
 
-2. Compile virtualbox guest additions
+## 2. Compile virtualbox guest additions
+
 Now click "Devices > Insert guest additions CD image" in the virtualbox window. This will insert the guest additions cd image into the guest OS. On Xubuntu the cd should get mounted automatically inside the /media directory.
 
 On Ubuntu unity, you should see the cd icon on the left panel towards the lower side. Click it to open the VBox guest additions cd in file manager.
