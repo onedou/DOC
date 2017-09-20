@@ -140,6 +140,11 @@ Docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 
 >Note： attach命令允许你查看或者影响一个运行的容器。你可以在同一时间attach同一个容器。你也可以从一个容器中脱离出来，是从CTRL-C。
 
+使用docker exec 进入容器命令行
+
+	$docker docker exec -ti {container} bash
+
+
 ## 保存和加载镜像（save、load） 
 当需要把一台机器上的镜像迁移到另一台机器的时候，需要保存镜像与加载镜像。 
 
