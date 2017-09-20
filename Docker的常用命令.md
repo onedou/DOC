@@ -155,6 +155,18 @@ Docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 
 	$docker load < /home/save.tar 
 
+## 删除docker镜像
+
+	docker rmi <image id>
+
+想要删除untagged images，也就是那些id为<None>的image的话可以用
+
+	docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+
+要删除全部image的话
+
+	docker rmi $(docker images -q)
+
 ## 登录registry server（login）
 登陆registry server  
 -e, --email="" Email  
