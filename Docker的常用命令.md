@@ -130,6 +130,8 @@ Docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了�
 --no-stdin=false Do not attach stdin  
 --sig-proxy=true Proxify all received signal to the process  
 
+使用docker attach进入容器
+
 	$docker attach ID  
 
 >Note： attach命令允许你查看或者影响一个运行的容器。你可以在同一时间attach同一个容器。你也可以从一个容器中脱离出来，是从CTRL-C。
