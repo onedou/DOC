@@ -61,30 +61,24 @@ SSH，Secure Shell，是一项创建在应用层和传输层基础上的安全�
 
 ### 开启 Minecraft 服务器
 
-
-
 这里用最新版快照的官服做演示（话说官服加载真快啊）
 
-那么再翻个页吧，后两页会分别介绍在 Linux 和 Windows 下开启 SSH 端口转发的方法。
+![image](https://user-images.githubusercontent.com/3422640/30788558-82d8dc3e-a163-11e7-8745-91cbd6c4192d.png)
 
-好，新的一页，首先来介绍在 linux 环境下开启 SSH 端口转发的方法。
+### Linux 环境下的配置
 
-Linux 环境下的配置
+首先来看看 ssh 的 man page。  
+这永远是了解一个命令的最好方法。
 
-首先来看看 ssh 的 man page 吧~这永远是了解一个命令的最好方法。
+    man ssh
+    
+![image](https://user-images.githubusercontent.com/3422640/30788615-4dd82232-a164-11e7-86f6-8d257b3736d6.png)
 
-ssh -r man page
+那么，来建立连接吧。打开终端：
 
-前提是你没有鹰文恐惧症的话。。嘛，如果真的不想看的话，不看也成，后面窝会写一篇关于 ssh 端口转发中 -L``-R 和 -D 的区别（大概），这篇文章中只要跟着窝做就好啦
+    ssh -R 0.0.0.0:25567:localhost:25565 root@your-server-ip
 
-那么，来建立连接吧。打开你心爱的小终端~
-
-ssh -R 0.0.0.0:25567:localhost:25565 root@your-server-ip
-好了。
-
-对，你没看错，好了。不信？
-
-2
+![image](https://user-images.githubusercontent.com/3422640/30788635-763728d6-a164-11e7-9632-996cc7f37394.png)
 
 在输入密码后进入的 VPS shell 上执行 netstat -anp，是不是看到 sshd 已经在监听 25567 了？ （虽然你看到的应该是监听在 127.0.0.1 上，具体为啥窝等下讲）
 
