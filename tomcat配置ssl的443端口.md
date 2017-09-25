@@ -1,10 +1,16 @@
 http://blog.csdn.net/lilin_esri/article/details/70036737
 
 最近遇到一个问题，需要把一个war包放到tomcat下运行，于是就自己安装了一个tomcat，将war包放到其下运行，访问war包的应用，发现报错，提示该应用必需使用https的443端口，于是，仔细查找了这方面的资料。
+
 发现，要想使用tomcat的https必需要生成一个证书。这个证书的生成就需要依靠jdk,jdk中有一个keyTool可以用来生成我们需要的证书。
+
 下面是证书的生成方法：
+
 1>首先，进入到cmd窗口，运行命令：
+
 进入到%JAVA_HOME%/bin目录，我自己的jdk装在了d盘。执行命令：
+
+![image](https://user-images.githubusercontent.com/3422640/30814232-29dfce3c-a242-11e7-84ab-cdb8b4819b07.png)
 
 参数说明：
 -alias:
