@@ -74,80 +74,82 @@ SSH，Secure Shell，是一项创建在应用层和传输层基础上的安全�
     
 ![image](https://user-images.githubusercontent.com/3422640/30788615-4dd82232-a164-11e7-86f6-8d257b3736d6.png)
 
-那么，来建立连接吧。打开终端：
+那么，来建立连接吧。在本地打开终端，输入：
 
     ssh -R 0.0.0.0:25567:localhost:25565 root@your-server-ip
 
 ![image](https://user-images.githubusercontent.com/3422640/30788635-763728d6-a164-11e7-9632-996cc7f37394.png)
 
-在输入密码后进入的 VPS shell 上执行 netstat -anp，是不是看到 sshd 已经在监听 25567 了？ （虽然你看到的应该是监听在 127.0.0.1 上，具体为啥窝等下讲）
+在输入密码后进入的VPS shell上执行**netstat -anp**，是不是看到sshd已经在监听25567了？
+（虽然你看到的应该是监听在 127.0.0.1 上，具体等下讲）
 
-那么这行命令是什么意思呢？
+那么这行命令是什么意思呢？  
 
 这条命令的格式是这样的：
 
-ssh -R [bind_address:]port:host:hostport
-意思是让远程服务器监听 port 端口，使其被访问时像本地电脑在访问 host:hostport 一样。
+    ssh -R [bind_address:]port:host:hostport
 
-ssh -R 0.0.0.0:25567:localhost:25565 root@your-server-ip
-这样，访问 your-server-ip:25567 就等同于用本机访问 localhost:25565 一样。
+意思是让远程服务器监听port端口，使其被访问时像本地电脑在访问 host:hostport 一样。
 
-通俗地讲，就是将本机的 25565 端口映射至 VPS 的 25567 端口。
+    ssh -R 0.0.0.0:25567:localhost:25565 root@your-server-ip
 
-那么 bind_address 的 0.0.0.0 是什么呢？因为远程转发的端口默认也只能在远程服务器本机上访问（即 localhost 等本地环回地址），要想允许外部访问，就要将 bind_address 设为 * 或者 0.0.0.0，并确保在服务器的 sshd_config 中打开了 GatewayPorts 选项。
+这样，访问**your-server-ip:25567就等同于用本机访问localhost:25565一样**。
 
-看到粗体字了吗？这就是坑之一，也是为什么你执行完上面那条命令后，VPS 上显示监听在 127.0.0.1 上，而且 MC 客户端无法连接了。
+通俗地讲，就是将**本机 25565**端口映射至**VPS 25567**端口。
+
+那么bind_address的0.0.0.0是什么呢？ 
+
+因为远程转发的端口默认也只能在远程服务器本机上访问（即 localhost 等本地环回地址）。 
+要想允许外部访问，就要将 bind_address 设为 * 或者 0.0.0.0。
+
+> 确保在服务器的sshd_config中打开了 GatewayPorts 选项。
+
+没有设置GatewayPorts可能会导致在 VPS 上显示监听在 127.0.0.1 上，而且 MC 客户端无法连接。
 
 那么来看一下 GatewayPorts 的 man page 吧：
 
-gateway ports man page
+![image](https://user-images.githubusercontent.com/3422640/30788789-11ccb2d8-a166-11e7-895b-1ea7d9c0e458.png)
 
-不想看也没关系，总之只有打开了这个，才能在外网访问 VPS 所转发的端口。
+总之只有打开了这个，才能在外网访问 VPS 所转发的端口。
 
-在 VPS 上（血的教训），编辑 /etc/ssh/sshd_config，将其中的 GatewayPorts 设置为 on。
+在 VPS 上，编辑 /etc/ssh/sshd_config，将其中的 GatewayPorts 设置为 on。
 
-sshd_config
+![image](https://user-images.githubusercontent.com/3422640/30788803-37a9589e-a166-11e7-835a-efd64a34d6ff.png)
 
-保存后，重载 sshd （$ service sshd reload），再次执行上述命令，是不是发现端口已经监听在 0.0.0.0 上了呢？
+保存后，重载sshd，再次执行ssh命令，是不是发现端口已经监听在 0.0.0.0 上了呢？  
+重置sshd：
+    
+    service sshd reload
 
-而且 MC 客户端也可以正常访问到了~
+MC 客户端可以正常访问。
 
-mc succeed
+### 小技巧：
 
-液~~ 大☆成★功
+像这样 ssh -R，输完密码（或密钥认证）后，会直接进入 VPS 的 Shell，但是只想转发某个端口，要怎么办呢？
 
-小技巧：
+    -f 认证之后，ssh 将自动转至后台运行  
+    -N 不执行脚本或命令，即通知 sshd 不运行设定的 shell  
+    -C 压缩传送的数据  
 
-像这样 ssh -R，输完密码（或密钥认证）后，会直接进入 VPS 的 Shell，但是窝们只想默默的转发个端口，要咋办呢？
-
-有这些参数来拯救你！锵锵锵~
-
--f 认证之后，ssh 将自动转至后台运行
-
--N 不执行脚本或命令，即通知 sshd 不运行设定的 shell
-
--C 压缩传送的数据
-ssh -f
+![image](https://user-images.githubusercontent.com/3422640/30788857-d1116648-a166-11e7-9914-6712379d74f2.png)
 
 Linux 下的端口转发配置这样就算结束了，是不是很简单呢~
 
-那么下一页将会介绍 Windows 下配置 ssh 端口转发的方法。
-
-好，来讲 Windows 下的配置吧。
+### Windows 下的配置吧。
 
 其实 Win 下用 Cygwin/Babun 这些在终端里打 ssh -R 照样能建立连接，但是看这里的一般都想有个 GUI 吧？
 
-那么，请出窝们这页的主角 —— PuTTY！（万能的 PuTTY）
+使用GUI的PuTTY
 
-1
+![image](https://user-images.githubusercontent.com/3422640/30788921-3a16928a-a167-11e7-861a-82e671078229.png)
 
-这个应该都会吧，然后进 SSH – Tunel：
+然后进 SSH – Tunel：
 
-2
+![image](https://user-images.githubusercontent.com/3422640/30788933-53513de0-a167-11e7-9478-eea9c13ef9ee.png)
 
 最后点 Add 按钮添加规则，去 Session 页，保存成一个配置集，以后就可以直接 Open 了。
 
-putty
+![image](https://user-images.githubusercontent.com/3422640/30788947-776f5d7e-a167-11e7-80c5-603700b10e4b.png)
 
 至此，你已完成 ssh 端口转发的配置。
 
