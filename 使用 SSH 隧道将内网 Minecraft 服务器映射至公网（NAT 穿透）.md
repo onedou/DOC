@@ -112,7 +112,8 @@ SSH，Secure Shell，是一项创建在应用层和传输层基础上的安全�
 
 总之只有打开了这个，才能在外网访问 VPS 所转发的端口。
 
-在 VPS 上，编辑 /etc/ssh/sshd_config，将其中的 GatewayPorts 设置为 on。
+在 VPS 上，编辑 /etc/ssh/sshd_config，将其中的 GatewayPorts 设置为 on。  
+ubuntu系统，在最后一行添加 GatewayPorts yes  
 
 ![image](https://user-images.githubusercontent.com/3422640/30788803-37a9589e-a166-11e7-835a-efd64a34d6ff.png)
 
