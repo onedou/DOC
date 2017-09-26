@@ -47,6 +47,7 @@ keystorePass是之前设置的秘钥库口令，由于我设置的Tomcat的**秘
 ![image](https://user-images.githubusercontent.com/3422640/30837606-a89b7166-a22b-11e7-8585-72b5d242a888.png)
 
 添加 **JAVA_HOEM** , **CATALINA_HOME** , **PR_DISPLAYNAME**
+
 这三个分别是 **JDK的目录** ，**Tomcat的目录**和**Tomcat显示的服务名称**。
 
 注册方法：
