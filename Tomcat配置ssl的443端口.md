@@ -9,14 +9,15 @@
 
 #### 1. 首先，进入到cmd窗口，运行命令：
 
-进入到 %JAVA_HOME%/bin 目录，这里JDK装在了D盘。执行命令：
-（Mac 使用 ls -l `whick java`命令查看java目录）
+进入到 %JAVA_HOME%/bin 目录，这里JDK装在了D盘。（Mac 使用 ls -l `whick java`命令查看java目录）
+
+执行命令：
 
 ![image](https://user-images.githubusercontent.com/3422640/30814232-29dfce3c-a242-11e7-84ab-cdb8b4819b07.png)
 
 **参数说明：**
 
-    -alias：F:\tomcat.keystore：证书文件保存的位置，名称是tomcat.keystore
+    -keystore：F:\tomcat.keystore：证书文件保存的位置，名称是tomcat.keystore
     -validity：证书的有效期36500是100年，默认是90天
 
 #### 2. 输入证书参数：
