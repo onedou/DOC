@@ -33,16 +33,27 @@
 
 ### 配置Tomcat：
 
-进入Tomcat的安装目录，找到conf目录下的server.xml，打开编辑：
+#### 进入Tomcat的安装目录，找到conf目录下的server.xml，打开编辑：
 
 ![image](https://user-images.githubusercontent.com/3422640/30837542-36f3b0be-a22b-11e7-94e3-1edb68afe173.png)
 
 keystoreFile是你的证书的存放位置。
-keystorePass是之前设置的秘钥库口令，由于我设置的tomcat的秘钥口令和秘钥库口令相同，这里就是相同的。编辑完成，保存。
-接着，修改tomcat的bin目录下的service.bat文件，
+keystorePass是之前设置的秘钥库口令，由于我设置的Tomcat的**秘钥口令**和**秘钥库口令**相同，这里就是相同的。编辑完成，保存。
 
-添加JAVA_HOEM,CATALINA_HOME,PR_DISPLAYNAME:这三个分别是jdk的目录，tomcat的目录和tomcat显示的服务名称。
-为了使用tomcat更方便，将其注册成服务：
-注册方法：进入命令行，cd到tomcat的bin目录下。service.bat文件就是我们注册系统服务所要使用的文件。执行命令service.bat install 服务名，就可以看到提示信息了。
-提示服务安装成功后，就可以去看看系统服务中是否已经有我们刚刚注册的服务了。
-如果以后不想要这个服务了，就执行命令service.bat uninstall 服务名 移除就可以了。
+#### 为了使用Tomcat更方便，将其注册成服务：
+
+修改Tomcat的bin目录下的service.bat文件:
+
+![image](https://user-images.githubusercontent.com/3422640/30837606-a89b7166-a22b-11e7-8585-72b5d242a888.png)
+
+添加 **JAVA_HOEM** , **CATALINA_HOME** , **PR_DISPLAYNAME**
+这三个分别是 **JDK的目录** ，**Tomcat的目录**和**Tomcat显示的服务名称**。
+
+注册方法：
+
+进入命令行，cd到Tomcat的bin目录下。  
+service.bat文件就是我们注册系统服务所要使用的文件。  
+执行命令 **service.bat install** 服务名，就可以看到提示信息了。
+
+提示服务安装成功后，就可以查看系统服务中是否已经有我们刚刚注册的服务。
+如果以后不想要这个服务了，就执行命令**service.bat uninstall**服务名 移除即可。
