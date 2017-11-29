@@ -27,3 +27,6 @@ unfolds all regions in the editor
 
 ## go last line
 OS X : Ctrl + -
+
+## format code
+OS X : Alt + Shift + F
