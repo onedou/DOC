@@ -1,6 +1,6 @@
-refrence !()[https://stackoverflow.com/questions/2255416/how-to-determine-when-a-git-branch-was-created]
+refrence ![https://stackoverflow.com/questions/2255416/how-to-determine-when-a-git-branch-was-created](https://stackoverflow.com/questions/2255416/how-to-determine-when-a-git-branch-was-created)
 
-!(Pro Git § 3.1 Git Branching - What a Branch Is)[https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is] has a good explanation of what a git branch really is
+![Pro Git § 3.1 Git Branching - What a Branch Is](https://git-scm.com/book/en/v1/Git-Branching-What-a-Branch-Is) has a good explanation of what a git branch really is
 
 A branch in Git is simply a lightweight movable pointer to [a] commit.
 Since a branch is just a lightweight pointer, git has no explicit notion of its history or creation date. "But hang on," I hear you say, "of course git knows my branch history!" Well, sort of.
