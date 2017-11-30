@@ -31,5 +31,5 @@ OS X    : Ctrl + -
 OS X : Alt + Shift + F  
 
 ## find file
-Windows : Ctrl + P  
-OS X    : Cmd + P
+Windows : Ctrl + P(type file name)  
+OS X    : Cmd + P(type file name)
