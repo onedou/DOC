@@ -1,6 +1,4 @@
 ## collapse
-This feature has been rolled out and is now implemented in Visual Studio Code version 0.10.11. (release notes) There are also keyboard shortcuts available as well.
-
 Fold:  
 Windows : Ctrl + Shift + [   
 OS X    : ⌥ + ⌘ + [  
@@ -26,7 +24,12 @@ OS X    : ⌘ + K ⌘ + J
 unfolds all regions in the editor
 
 ## go last line  
-OS X : Ctrl + -  
+Windows : Alt + Left
+OS X    : Ctrl + -  
 
 ## format code  
 OS X : Alt + Shift + F  
+
+## find file
+Windows : Ctrl + P
+OS X    : Cmd + P
