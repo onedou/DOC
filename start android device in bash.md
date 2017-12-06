@@ -1,5 +1,7 @@
-change directory to android SDK tools folder, use this command
+change directory to android SDK tools folder, use this command  
+
     ./emulate -avd your_device_name
 
-list your avd
+list your avd  
+
     ./android list avd
