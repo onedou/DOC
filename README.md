@@ -29,9 +29,16 @@
 ## Javascript
 [AngularJS 模块插件地址](./AngularJS%20模块插件地址)
 
+[JavaScript中call,apply,bind方法的总结](./JavaScript中call%2Capply%2Cbind方法的总结)
+
 [JS 替换所有的空格](./JS%20替换所有的空格)
+
+
 
 ## Css
 [CSS ScrollBar.md](./CSS%20ScrollBar)
 
-## 
+## 其他
+[JetBrains PhpStorm激活步骤](./JetBrains%20PhpStorm激活步骤)
+
+
