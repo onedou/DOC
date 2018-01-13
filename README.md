@@ -27,6 +27,9 @@
 
 [Tar命令的使用](./Tar命令的使用)
 
+## Git
+[git添加ssh key的方法](./git%20bash%20添加和配置ssh%20key的方法)
+
 ## Mac
 [Mac OS X Terminal 打开Tab键自动补全功能](Mac%20OS%20X%20Terminal%20打开Tab键自动补全功能)
 
@@ -45,6 +48,8 @@
 
 ## Android
 [Android组件及UI框架大全](./Android组件及UI框架大全)
+
+[android 右上角添加菜单](./android%20右上角添加菜单)
 
 ## Javascript
 [AngularJS 模块插件地址](./AngularJS%20模块插件地址)
