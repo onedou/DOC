@@ -13,12 +13,23 @@
 
 [Debian下shadowsocks-libev一键安装脚本](./Debian下shadowsocks-libev一键安装脚本)
 
+[Debian开机启动管理](./Debian开机启动管理)
+
+[How to install Virtualbox guest additions on Ubuntu 14.04](./How%20to%20install%20Virtualbox%20guest%20additions%20on%20Ubuntu%2014.04)
+
+
+
+## Docker
+[Docker的常用命令](./Docker的常用命令)
+
 
 ## Android
 [Android组件及UI框架大全](./Android组件及UI框架大全)
 
 ## Javascript
 [AngularJS 模块插件地址](./AngularJS%20模块插件地址)
+
+[JS 替换所有的空格](./JS%20替换所有的空格)
 
 ## Css
 [CSS ScrollBar.md](./CSS%20ScrollBar)
