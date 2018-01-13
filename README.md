@@ -21,8 +21,14 @@
 
 [Linux SVN服务的搭建及操作](./Linux%20SVN服务的搭建及操作)
 
+[Linux 软连接的操作](./Linux%20软连接的操作)
 
+[Linux下查找并删除特定文件或文件夹](./Linux下查找并删除特定文件或文件夹)
 
+[]
+
+## Mac
+[Mac OS X Terminal 打开Tab键自动补全功能](Mac%20OS%20X%20Terminal%20打开Tab键自动补全功能)
 
 ## Docker
 [Docker的常用命令](./Docker的常用命令)
@@ -45,5 +51,5 @@
 
 ## 其他
 [JetBrains PhpStorm激活步骤](./JetBrains%20PhpStorm激活步骤)
-
+[MarkDown的语法](./MarkDown的语法)
 
