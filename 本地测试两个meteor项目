@@ -1,5 +1,0 @@
-第二个meteor运行 meteor run - -port 4000 就好了
-然后export MONGO_URL=mongodb://localhost:3001/meteor
-就可以用同一个数据库
-那webapp ios android 一个project
-后台一个project
