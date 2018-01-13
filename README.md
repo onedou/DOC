@@ -58,6 +58,8 @@
 ## Android
 [Android组件及UI框架大全](./Android组件及UI框架大全)
 
+[start android device in bash](./start%20android%20device%20in%20bash)
+
 [android 右上角添加菜单](./android%20右上角添加菜单)
 
 ## Javascript
