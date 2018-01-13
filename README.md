@@ -39,12 +39,21 @@
 ## MongoDB
 [MongoDB基本命令使用](./MongoDB基本命令使用)
 
+[mongodb 3.2 用户权限管理配置](./mongodb 3.2 用户权限管理配置)
+
 ## PHP
 [PHP-FPM 启动空白的解决方法](./PHP-FPM%20启动空白的解决方法)
 
 [PHP7下使用MongoDB API](./PHP7下使用MongoDB%20API)
 
 [PHP使用ob_flush不能每隔一秒输出原理分析](./PHP使用ob_flush不能每隔一秒输出原理分析)
+
+[nginx环境中php-fpm php错误提示开启方法](./nginx环境中php-fpm%20php错误提示开启方法)
+
+
+## Mysql
+[mysql操作记录](./mysql操作记录)
+
 
 ## Android
 [Android组件及UI框架大全](./Android组件及UI框架大全)
@@ -53,6 +62,10 @@
 
 ## Javascript
 [AngularJS 模块插件地址](./AngularJS%20模块插件地址)
+
+[npm国内被墙的解决方法](./npm国内被墙的解决方法)
+
+
 
 [JavaScript中call,apply,bind方法的总结](./JavaScript中call%2Capply%2Cbind方法的总结)
 
