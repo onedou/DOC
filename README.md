@@ -27,8 +27,29 @@
 
 [Tar命令的使用](./Tar命令的使用)
 
+[ubuntu ssh 证书登录](./ubuntu%20ssh%20证书登录)
+
+[ubuntu 临时设置 proxy](./ubuntu%20临时设置%20proxy)
+
+[ubuntu下使用SSH远程登录与禁止登录方法](./ubuntu下使用SSH远程登录与禁止登录方法)
+
+[ubuntu中开启、关闭防火墙](./ubuntu中开启、关闭防火墙)
+
+[使用 SSH 隧道将内网 Minecraft 服务器映射至公网（NAT 穿透）](./使用%20SSH%20隧道将内网%20Minecraft%20服务器映射至公网（NAT%20穿透）)
+
+[加密代理脚本](./加密代理脚本)
+
+[安装sslocal方法和prioxy方法](./安装sslocal方法和prioxy方法)
+
+
 ## Git
 [git添加ssh key的方法](./git%20bash%20添加和配置ssh%20key的方法)
+
+[为git设置HTTPS代理](./为git设置HTTPS代理)
+
+[搭建Git服务器](./搭建Git服务器)
+
+[获取branch基础分支](./获取branch基础分支)
 
 ## Mac
 [Mac OS X Terminal 打开Tab键自动补全功能](Mac%20OS%20X%20Terminal%20打开Tab键自动补全功能)
@@ -50,6 +71,9 @@
 
 [nginx环境中php-fpm php错误提示开启方法](./nginx环境中php-fpm%20php错误提示开启方法)
 
+[下载支持php7的MongoDB扩展](./下载支持php7的MongoDB扩展)
+
+[编译PHP的配置](./编译PHP的配置)
 
 ## Mysql
 [mysql操作记录](./mysql操作记录)
@@ -67,14 +91,18 @@
 
 [npm国内被墙的解决方法](./npm国内被墙的解决方法)
 
-
-
 [JavaScript中call,apply,bind方法的总结](./JavaScript中call%2Capply%2Cbind方法的总结)
 
 [JS 替换所有的空格](./JS%20替换所有的空格)
 
 ## Tomcat
 [Tomcat配置ssl的443端口](./Tomcat配置ssl的443端口)
+
+[tomcat 配置https方法](.//tomcat%20配置https方法)
+
+## VSCode
+[vscode shortcut]（./vscode%20shortcut）
+
 
 ## Css
 [CSS ScrollBar.md](./CSS%20ScrollBar)
