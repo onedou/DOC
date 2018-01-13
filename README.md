@@ -1,4 +1,4 @@
-# Documentation
+# DOCUMENTATION
 
 ## [文档首页](https://onedou.github.io/DOC/)
 
@@ -16,6 +16,11 @@
 [Debian开机启动管理](./Debian开机启动管理)
 
 [How to install Virtualbox guest additions on Ubuntu 14.04](./How%20to%20install%20Virtualbox%20guest%20additions%20on%20Ubuntu%2014.04)
+
+[Linux SVN服务器配置及使用方法](./Linux%20SVN服务器配置及使用方法)
+
+[Linux SVN服务的搭建及操作](./Linux%20SVN服务的搭建及操作)
+
 
 
 
