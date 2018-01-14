@@ -1,6 +1,6 @@
 # DOCUMENTATION
 
-## [文档首页](https://onedou.github.io/DOC/)
+## [文档首页](http://big.bel.org.cn)
 
 ## Linux
 [Android WebView使用方法详解 附js交互调用方法](./Android%20WebView使用方法详解%20附js交互调用方法)
@@ -101,8 +101,7 @@
 [tomcat 配置https方法](.//tomcat%20配置https方法)
 
 ## VSCode
-[vscode shortcut]（./vscode%20shortcut）
-
+[vscode shortcut](./vscode%20shortcut)
 
 ## Css
 [CSS ScrollBar.md](./CSS%20ScrollBar)
