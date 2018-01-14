@@ -1,6 +1,6 @@
-#Tar命令的使用
+# Tar命令的使用
 
-##linux tar 解压命令总结
+## linux tar 解压命令总结
 
 把常用的tar解压命令总结下，当作备忘：
 
@@ -40,7 +40,7 @@
 	这条命令是解出all.tar包中所有文件，-x是解开的意思
 
 
-###压缩
+### 压缩
 
 	tar –cvf jpg.tar *.jpg  将目录里所有jpg文件打包成tar.jpg
 	tar –czf jpg.tar.gz *.jpg   将目录里所有jpg文件打包成jpg.tar后，并且将其用gzip压缩，生成一个gzip压缩过的包，命名为jpg.tar.gz
@@ -49,7 +49,7 @@
 	rar a jpg.rar *.jpg rar格式的压缩，需要先下载rar for linux
 	zip jpg.zip *.jpg   zip格式的压缩，需要先下载zip for linux 
 
-###解压
+### 解压
 
 	tar –xvf file.tar  解压 tar包
 	tar -xzvf file.tar.gz 解压tar.gz
@@ -58,7 +58,7 @@
 	unrar e file.rar 解压rar
 	unzip file.zip 解压zip
 
-###总结
+### 总结
 
 	*.tar 用 tar –xvf 解压
 	*.gz 用 gzip -d或者gunzip 解压
