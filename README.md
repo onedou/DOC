@@ -108,5 +108,12 @@
 
 ## 其他
 [JetBrains PhpStorm激活步骤](./JetBrains%20PhpStorm激活步骤)
+
 [MarkDown的语法](./MarkDown的语法)
+
+[Wix](https://www.wix.com/my-account/sites/941acc0a-9f19-4731-92f1-1f7924ae12a1)
+
+[原型设计](https://www.processon.com/popular)
+
+[设计师网址导航](http://hao.uisdc.com/)
 
