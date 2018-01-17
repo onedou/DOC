@@ -99,7 +99,7 @@ nothing...
 [JS 替换所有的空格](./JS%20替换所有的空格)
 
 # ES6
-[Javascript 中的神器——Promise](./Javascript 中的神器——Promise)
+[Javascript 中的神器——Promise](./avascript%20中的神器——Promise)
 
 [npm国内被墙的解决方法](./npm国内被墙的解决方法)
 
