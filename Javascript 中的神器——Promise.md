@@ -72,16 +72,14 @@ Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就�
 
 #### 1. 封装同步与异步代码
 
-    ```
-    new Promise(function (resolve, reject) {
-    resolve(someValue);
-    });
-    ```
-    写成
 
-    ```
+    new Promise(function (resolve, reject) {
+        resolve(someValue);
+    });
+
+写成
+
     Promise.resolve(someValue);
-    ```
 
 #### 2. 捕获同步异常
 
