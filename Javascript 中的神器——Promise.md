@@ -22,20 +22,19 @@ Promise 对象有以下两个特点。
 
 Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部。第三，当处于 Pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
-    <span class="hljs-keyword">var</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{
-     <span class="hljs-keyword">if</span> (<span class="hljs-comment">/* 异步操作成功 */</span>){
-     resolve(value);
-     } <span class="hljs-keyword">else</span> {
-     reject(error);
-     }
+    var promise = new Promise(function(resolve, reject) {
+        if (/* 异步操作成功 */){
+        resolve(value);
+        } else {
+        reject(error);
+        }
     });
 
-    promise.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
-     <span class="hljs-comment">// success</span>
-    }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
-     <span class="hljs-comment">// failure</span>
+    promise.then(function(value) {
+        // success
+    }, function(value) {
+        // failure
     });
-    `</pre>
 
     Promise 构造函数接受一个函数作为参数，该函数的两个参数分别是 resolve 方法和 reject 方法。
 
@@ -54,15 +53,13 @@ Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就�
     `</pre>
 6.  Promise.race()       // 竞速，完成一个即可
 
-    ## 进阶
+## 进阶
 
     promises 的奇妙在于给予我们以前的 return 与 throw，每个 Promise 都会提供一个 then() 函数，和一个 catch()，实际上是 then(null, ...) 函数，
 
-    <pre class="hljs ruby">`    somePromise().<span class="hljs-keyword">then</span>(functoin(){
-            <span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> something
-        });
-
-    `</pre>
+    somePromise().then(functoin(){
+        // do something
+    });
 
     我们可以做三件事，
 
@@ -72,88 +69,79 @@ Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就�
 
     3. throw 一个同步异常 `throw new Eror('');`
 
-    #### 1. 封装同步与异步代码
+#### 1. 封装同步与异步代码
 
-    <pre class="hljs javascript">`<span class="hljs-string">``</span><span class="hljs-string">`
+    ```
     new Promise(function (resolve, reject) {
     resolve(someValue);
     });
-    `</span><span class="hljs-string">``</span>
+    ```
     写成
 
-    <span class="hljs-string">``</span><span class="hljs-string">`
+    ```
     Promise.resolve(someValue);
-    `</span><span class="hljs-string">``</span>
-    `</pre>
+    ```
 
-    #### 2. 捕获同步异常
+#### 2. 捕获同步异常
 
-    <pre class="hljs javascript">` <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
-     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'悲剧了，又出 bug 了'</span>);
-     }).catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
-     <span class="hljs-built_in">console</span>.log(err);
-     });
-    `</pre>
+    new Promise(function (resolve, reject) {
+        throw new Error('悲剧了，又出 bug 了');
+    }).catch(function(err){
+        console.log(err);
+    });
 
     如果是同步代码，可以写成
 
-    <pre class="hljs javascript">`    <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"什么鬼"</span>));
+    Promise.reject(new Error("什么鬼"));
 
-    `</pre>
+#### 3. 多个异常捕获，更加精准的捕获
 
-    #### 3. 多个异常捕获，更加精准的捕获
-
-    <pre class="hljs php">`somePromise.then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-     <span class="hljs-keyword">return</span> a.b.c.d();
-    }).<span class="hljs-keyword">catch</span>(TypeError, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
-     <span class="hljs-comment">//If a is defined, will end up here because</span>
-     <span class="hljs-comment">//it is a type error to reference property of undefined</span>
-    }).<span class="hljs-keyword">catch</span>(ReferenceError, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
-     <span class="hljs-comment">//Will end up here if a wasn't defined at all</span>
-    }).<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> </span>{
-     <span class="hljs-comment">//Generic catch-the rest, error wasn't TypeError nor</span>
-     <span class="hljs-comment">//ReferenceError</span>
+    somePromise.then(function() {
+        return a.b.c.d();
+    }).catch(TypeError, function(e) {
+        //If a is defined, will end up here because
+        //it is a type error to reference property of undefined
+    }).catch(ReferenceError, function(e) {
+        //Will end up here if a wasn't defined at all
+    }).catch(function(e) {
+        //Generic catch-the rest, error wasn't TypeError nor
+        //ReferenceError
     });
-    `</pre>
 
-    #### 4. 获取两个 Promise 的返回值
+#### 4. 获取两个 Promise 的返回值
 
-    <pre class="hljs bash">`1. .<span class="hljs-keyword">then</span> 方式顺序调用
+    1. .then 方式顺序调用
     2. 设定更高层的作用域
     3. spread
-    `</pre>
 
-    #### 5. finally
+#### 5. finally
 
-    <pre class="hljs cpp">`任何情况下都会执行的，一般写在 <span class="hljs-keyword">catch</span> 之后
-    `</pre>
+    任何情况下都会执行的，一般写在 catch 之后
 
-    #### 6. bind
+#### 6. bind
 
-    <pre class="hljs javascript">`somethingAsync().bind({})
-    .spread(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">aValue, bValue</span>) </span>{
-     <span class="hljs-keyword">this</span>.aValue = aValue;
-     <span class="hljs-keyword">this</span>.bValue = bValue;
-     <span class="hljs-keyword">return</span> somethingElseAsync(aValue, bValue);
+    somethingAsync().bind({})
+    .spread(function (aValue, bValue) {
+        this.aValue = aValue;
+        this.bValue = bValue;
+        return somethingElseAsync(aValue, bValue);
     })
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cValue</span>) </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.aValue + <span class="hljs-keyword">this</span>.bValue + cValue;
+    .then(function (cValue) {
+        return this.aValue + this.bValue + cValue;
     });
-    `</pre>
 
     或者 你也可以这样
 
-    <pre class="hljs javascript">`<span class="hljs-keyword">var</span> scope = {};
+    var scope = {};
     somethingAsync()
-    .spread(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">aValue, bValue</span>) </span>{
-     scope.aValue = aValue;
-     scope.bValue = bValue;
-     <span class="hljs-keyword">return</span> somethingElseAsync(aValue, bValue);
+    .spread(function (aValue, bValue) {
+        scope.aValue = aValue;
+        scope.bValue = bValue;
+        return somethingElseAsync(aValue, bValue);
     })
-    .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cValue</span>) </span>{
-     <span class="hljs-keyword">return</span> scope.aValue + scope.bValue + cValue;
+    .then(function (cValue) {
+        return scope.aValue + scope.bValue + cValue;
     });
-    `</pre>
 
     然而，这有非常多的区别，
 
@@ -161,22 +149,21 @@ Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就�
 2.  不能用于放在一个表达式的上下文中
 3.  效率更低
 
-    #### 7. all。非常用于于处理一个动态大小均匀的 Promise 列表
+#### 7. all。非常用于于处理一个动态大小均匀的 Promise 列表
 
-    #### 8. join。非常适用于处理多个分离的 Promise
+#### 8. join。非常适用于处理多个分离的 Promise
 
-    <pre class="hljs php">````
-    <span class="hljs-keyword">var</span> join = Promise.join;
+    ```
+    var join = Promise.join;
     join(getPictures(), getComments(), getTweets(),
-    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(pictures, comments, tweets)</span> </span>{
-    console.log(<span class="hljs-string">"in total: "</span> + pictures.length + comments.length + tweets.length);
+    function(pictures, comments, tweets) {
+    console.log("in total: " + pictures.length + comments.length + tweets.length);
     });
     ```
-    `</pre>
 
-    #### 9. props。处理一个 promise 的 map 集合。只有有一个失败，所有的执行都结束
+#### 9. props。处理一个 promise 的 map 集合。只有有一个失败，所有的执行都结束
 
-    <pre class="hljs javascript">`<span class="hljs-string">``</span><span class="hljs-string">`
+    ```
     Promise.props({
     pictures: getPictures(),
     comments: getComments(),
@@ -184,85 +171,70 @@ Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就�
     }).then(function(result) {
     console.log(result.tweets, result.pictures, result.comments);
     });
-    `</span><span class="hljs-string">``</span>
-    `</pre>
+    ```
 
-    #### 10. any 、some、race
+#### 10. any 、some、race
 
-    <pre class="hljs php">````
+    ```
     Promise.some([
-    ping(<span class="hljs-string">"ns1.example.com"</span>),
-    ping(<span class="hljs-string">"ns2.example.com"</span>),
-    ping(<span class="hljs-string">"ns3.example.com"</span>),
-    ping(<span class="hljs-string">"ns4.example.com"</span>)
-    ], <span class="hljs-number">2</span>).spread(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(first, second)</span> </span>{
-    console.log(first, second);
-    }).<span class="hljs-keyword">catch</span>(AggregateError, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err)</span> </span>{
-    `</pre>
-
-    err.forEach(function(e) {
-
-    console.error(e.stack);
-
+        ping("ns1.example.com"),
+        ping("ns2.example.com"),
+        ping("ns3.example.com"),
+        ping("ns4.example.com")
+    ], 2).spread(function(first, second) {
+        console.log(first, second);
+    }).catch(AggregateError, function(err) {
+        err.forEach(function(e) {
+        console.error(e.stack);
     });
-
-    });;
-
     ```
 
     有可能，失败的 promise 比较多，导致，Promsie 永远不会 fulfilled
 
     #### 11. .map(Function mapper [, Object options])
 
-    <pre class="hljs undefined">`用于处理一个数组，或者 promise 数组，
-    `</pre>
-
-    Option: concurrency 并发现
-
-    <pre class="hljs css">`    <span class="hljs-selector-tag">map</span>(..., {<span class="hljs-attribute">concurrency</span>: <span class="hljs-number">1</span>});
-    `</pre>
+    用于处理一个数组，或者 promise 数组，
 
     以下为不限制并发数量，读书文件信息
 
-    <pre class="hljs javascript">`<span class="hljs-keyword">var</span> <span class="hljs-built_in">Promise</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">"bluebird"</span>);
-    <span class="hljs-keyword">var</span> join = <span class="hljs-built_in">Promise</span>.join;
-    <span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">Promise</span>.promisifyAll(<span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>));
-    <span class="hljs-keyword">var</span> concurrency = <span class="hljs-built_in">parseFloat</span>(process.argv[<span class="hljs-number">2</span>] || <span class="hljs-string">"Infinity"</span>);
+    var Promise = require("bluebird");
+    var join = Promise.join;
+    var fs = Promise.promisifyAll(require("fs"));
+    var concurrency = parseFloat(process.argv[2] || "Infinity");
 
-    <span class="hljs-keyword">var</span> fileNames = [<span class="hljs-string">"file1.json"</span>, <span class="hljs-string">"file2.json"</span>];
-    <span class="hljs-built_in">Promise</span>.map(fileNames, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fileName</span>) </span>{
-     <span class="hljs-keyword">return</span> fs.readFileAsync(fileName)
-     .then(<span class="hljs-built_in">JSON</span>.parse)
-     .catch(<span class="hljs-built_in">SyntaxError</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-     e.fileName = fileName;
-     <span class="hljs-keyword">throw</span> e;
-     })
-    }, {<span class="hljs-attr">concurrency</span>: concurrency}).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">parsedJSONs</span>) </span>{
-     <span class="hljs-built_in">console</span>.log(parsedJSONs);
-    }).catch(<span class="hljs-built_in">SyntaxError</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Invalid JSON in file "</span> + e.fileName + <span class="hljs-string">": "</span> + e.message);
+    var fileNames = ["file1.json", "file2.json"];
+    Promise.map(fileNames, function(fileName) {
+        return fs.readFileAsync(fileName)
+               .then(JSON.parse)
+               .catch(SyntaxError, function(e) {
+                   e.fileName = fileName;
+                   throw e;
+               })
+    }, {concurrency: concurrency}).then(function(parsedJSONs) {
+        console.log(parsedJSONs);
+    }).catch(SyntaxError, function(e) {
+        console.log("Invalid JSON in file " + e.fileName + ": " + e.message);
     });
-    `</pre>
 
     结果
 
-    <pre class="hljs ruby">`$ sync &amp;&amp; echo <span class="hljs-number">3</span> &gt; <span class="hljs-regexp">/proc/sys</span><span class="hljs-regexp">/vm/drop</span>_caches
-    $ node test.js <span class="hljs-number">1</span>
-    reading files <span class="hljs-number">35</span>ms
-    $ sync &amp;&amp; echo <span class="hljs-number">3</span> &gt; <span class="hljs-regexp">/proc/sys</span><span class="hljs-regexp">/vm/drop</span>_caches
+    $ sync && echo 3 > /proc/sys/vm/drop_caches
+    $ node test.js 1
+    reading files 35ms
+    $ sync && echo 3 > /proc/sys/vm/drop_caches
     $ node test.js Infinity
-    reading <span class="hljs-symbol">files:</span> <span class="hljs-number">9</span>ms
-    `</pre>
+    reading files: 9ms
 
-    #### 11. .reduce(Function reducer [, dynamic initialValue]) -&gt; Promise
+#### 11. .reduce(Function reducer [, dynamic initialValue]) -&gt; Promise
 
-    <pre class="hljs javascript">`<span class="hljs-built_in">Promise</span>.reduce([<span class="hljs-string">"file1.txt"</span>, <span class="hljs-string">"file2.txt"</span>, <span class="hljs-string">"file3.txt"</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">total, fileName</span>) </span>{
-     <span class="hljs-keyword">return</span> fs.readFileAsync(fileName, <span class="hljs-string">"utf8"</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">contents</span>) </span>{
-     <span class="hljs-keyword">return</span> total + <span class="hljs-built_in">parseInt</span>(contents, <span class="hljs-number">10</span>);
+    Promise.reduce(["file1.txt", "file2.txt", "file3.txt"], function(total, fileName) {
+     return fs.readFileAsync(fileName, "utf8").then(function(contents) {
+     return total + parseInt(contents, 10);
      });
-    }, <span class="hljs-number">0</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">total</span>) </span>{
-     <span class="hljs-comment">//Total is 30</span>
+    }, 0).then(function(total) {
+     //Total is 30
     });
+
 
 ### 12. Time
 
