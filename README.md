@@ -60,7 +60,7 @@
 ## MongoDB
 [MongoDB基本命令使用](./MongoDB基本命令使用)
 
-[mongodb 3.2 用户权限管理配置](./mongodb 3.2 用户权限管理配置)
+[mongodb 3.2 用户权限管理配置](./mongodb%203.2%20用户权限管理配置)
 
 ## PHP
 [PHP-FPM 启动空白的解决方法](./PHP-FPM%20启动空白的解决方法)
