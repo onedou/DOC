@@ -49,8 +49,9 @@ Promise 也有一些缺点。首先，无法取消 Promise，一旦新建它就�
 3.  Promise.prototype.then()
 4.  Promise.prototype.catch()
 5.  Promise.all()    // 所有的完成
-    <pre class="hljs javascript">`<span class="hljs-keyword">var</span> p = <span class="hljs-built_in">Promise</span>.all([p1,p2,p3]);
-    `</pre>
+
+    var p = Promise.all([p1,p2,p3]);
+    
 6.  Promise.race()       // 竞速，完成一个即可
 
 ## 进阶
