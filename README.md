@@ -90,6 +90,8 @@
 nothing...
 
 ## ES5
+[JavaScript Promise 告别异步乱嵌套](https://segmentfault.com/a/1190000002395343)
+
 [AngularJS 模块插件地址](./AngularJS%20模块插件地址)
 
 [JavaScript中call,apply,bind方法的总结](./JavaScript中call%2Capply%2Cbind方法的总结)
