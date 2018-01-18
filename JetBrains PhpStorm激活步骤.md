@@ -1,24 +1,24 @@
-#JetBrains PhpStorm激活步骤：
+# JetBrains PhpStorm激活步骤：
 
-##一、下载安装篇
+## 一、下载安装篇
 
 前往：
 官方下载地址：https://www.jetbrains.com/phpstorm/download/
 安装：请按提示完成安装。
 
-##二、激活篇
+## 二、激活篇
 1、打开安装好的JetBrains PhpStorm  
 2、点击菜单栏中的Help中的Register子菜单。  
 3、在打开的License Activation窗口中选择“License server”单选按钮。  
 4、在License server address文本框中输入:http://soft.fenqiu.net/jetbrainsIiEiIyNMHtFvn1iVi0zXMpk/ 。  
 5、点击OK
 
->注意事项
+> 注意事项
 
 1.计算机名称必须为英文字母且不能有空格  
 2.计算机登录用户名必须为英文字母且不能有空格  
 
->常见问题
+> 常见问题
 
 1.为什么又提示我激活了？
 
