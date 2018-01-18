@@ -127,3 +127,5 @@ nothing...
 
 [设计师网址导航](http://hao.uisdc.com/)
 
+[slack](https://slack.com/)
+
