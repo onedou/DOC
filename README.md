@@ -41,7 +41,7 @@
 
 [安装sslocal方法和prioxy方法](./安装sslocal方法和prioxy方法)
 
-[ps -ef | grep 输出的具体含义](./ps%20-ef%20%7C%20grep%20输出的具体含义)
+[ps 输出的具体含义](./ps%20-ef%20%7C%20grep%20输出的具体含义)
 
 
 ## Git
