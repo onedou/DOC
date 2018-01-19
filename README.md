@@ -41,6 +41,8 @@
 
 [安装sslocal方法和prioxy方法](./安装sslocal方法和prioxy方法)
 
+[ps -ef | grep 输出的具体含义](./ps%20-ef%20%7C%20grep%20输出的具体含义)
+
 
 ## Git
 [git添加ssh key的方法](./git%20bash%20添加和配置ssh%20key的方法)
