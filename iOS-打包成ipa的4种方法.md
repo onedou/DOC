@@ -1,25 +1,25 @@
 ## 第一种
-《iOS-最全的App上架教程》
-https://www.jianshu.com/p/cea762105f7c
-** 上面文章已经提到了第一种 也是 最为实用的一种 打包上架api的方式，这里就不多少了。**
+《iOS-最全的App上架教程》  
+https://www.jianshu.com/p/cea762105f7c  
+上面文章已经提到了第一种 也是 最为实用的一种 打包上架api的方式，这里就不多少了。  
 
 ### 打包ipa的前提
 
-1、证书的申请和设置和上面文章的一样，从第一步到第四步都是一样的（http://www.jianshu.com/p/cea762105f7c）
-2、还有第六步的 1-3都是一样的 从第四步开始变化
+1、证书的申请和设置和上面文章的一样，从第一步到第四步都是一样的（http://www.jianshu.com/p/cea762105f7c）  
+2、还有第六步的 1-3都是一样的 从第四步开始变化  
 
 ## 第二种打包api的方法：
 
-通过生成文件Payload文件夹，生成ipa包。
+通过生成文件Payload文件夹，生成ipa包。  
 
-1、在打包ipa的前提条件都弄好之后，Command+B 编译
+1、在打包ipa的前提条件都弄好之后，Command+B 编译  
 ![image](https://user-images.githubusercontent.com/3422640/35200851-04945448-ff50-11e7-84a3-11769b28f181.png)
 
-2、然后按图 操作
+2、然后按图 操作  
 ![image](https://user-images.githubusercontent.com/3422640/35200857-0ef634d8-ff50-11e7-9165-ed0214d5682e.png)
 ![image](https://user-images.githubusercontent.com/3422640/35200859-1c1a5e3c-ff50-11e7-8ab3-4465b6035a85.png)
 
-3、在桌面上新建一个文件夹名字叫“Payload”，注意一个字母也不能少。并将上面的APP直接拷贝到这个文件夹下面，压缩这个文件夹，并将文件夹的后缀名，改正 “.ipa”。如下图:
+3、在桌面上新建一个文件夹名字叫“Payload”，注意一个字母也不能少。并将上面的APP直接拷贝到这个文件夹下面，压缩这个文件夹，并将文件夹的后缀名，改正 “.ipa”。如下图:  
 ![image](https://user-images.githubusercontent.com/3422640/35200863-27ccfe56-ff50-11e7-8de6-c7e573194a1c.png)
 ![image](https://user-images.githubusercontent.com/3422640/35200884-6de7b9da-ff50-11e7-87dd-811fa01a0340.png)
 
