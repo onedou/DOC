@@ -101,9 +101,9 @@ nothing...
 [JS 替换所有的空格](./JS%20替换所有的空格)
 
 # ES6
-[ES6系列文章 异步神器async-await](https://segmentfault.com/a/1190000011526612)
+[异步神器async-await](https://segmentfault.com/a/1190000011526612)
 
-[Javascript 中的神器——Promise](./avascript%20中的神器——Promise)
+[Javascript 中的神器——Promise](./Javascript%20中的神器——Promise)
 
 [npm国内被墙的解决方法](./npm国内被墙的解决方法)
 
