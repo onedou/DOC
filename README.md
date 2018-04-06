@@ -89,7 +89,7 @@
 [android 右上角添加菜单](./android%20右上角添加菜单)
 
 ## iOS
-nothing...
+[iOS安装CocoaPods详细过程](https://www.jianshu.com/p/9e4e36ba8574)
 
 ## ES5
 [JavaScript Promise 告别异步乱嵌套](https://segmentfault.com/a/1190000002395343)
@@ -101,6 +101,10 @@ nothing...
 [JS 替换所有的空格](./JS%20替换所有的空格)
 
 # ES6
+[BEM在Sass3.4中的提升](https://www.w3cplus.com/preprocessor/pushing-bem-to-the-next-level-with-sass-3-4.html)
+
+[CSS命名规范——BEM思想（非常赞的规范）](https://www.cnblogs.com/dujishi/p/5862911.html)
+
 [异步神器async-await](https://segmentfault.com/a/1190000011526612)
 
 [Javascript 中的神器——Promise](./Javascript%20中的神器——Promise)
