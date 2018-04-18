@@ -55,6 +55,8 @@
 
 [Git更新远程分支列表](./Git更新远程分支列表)
 
+[git设置分支upstream](./git设置分支upstream)
+
 ## Mac
 [Mac OS X Terminal 打开Tab键自动补全功能](Mac%20OS%20X%20Terminal%20打开Tab键自动补全功能)
 
