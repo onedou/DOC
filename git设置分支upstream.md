@@ -24,3 +24,13 @@ and also
         git branch -u origin/feature feature
         
 All forms function identically.
+
+## Find out which remote branch a local branch is tracking
+
+Here is a command that gives you the tracking branch:
+
+        git branch -vv
+
+You have to wade through the SHA and any long-wrapping commit messages, but it's quick to type and I get the tracking branches aligned vertically in the 3rd column.
+
+
