@@ -49,6 +49,8 @@
 
 [批量转换文件的 LF CRLF](./批量转换文件的%20LF%20CRLF)
 
+[ssh保持长连接的方式](./ssh保持长连接的方式)
+
 
 ## Git
 [git添加ssh key的方法](./git%20bash%20添加和配置ssh%20key的方法)
